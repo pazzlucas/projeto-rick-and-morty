@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty - Universo Multidimensional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <h1>Rick and Morty API</h1>
+            <p class="subtitulo">Explore os personagens do multiverso em tempo real</p>
+
+            <div class="controles">
+                <input type="text" id="campo-busca" placeholder="Buscar personagem por nome..." aria-label="Buscar personagem">
+                <select id="filtro-status" aria-label="Filtrar por status">
+                    <option value="">Todos os Status</option>
+                    <option value="alive">Vivo (Alive)</option>
+                    <option value="dead">Morto (Dead)</option>
+                    <option value="unknown">Desconhecido (Unknown)</option>
+                </select>
+                <button id="btn-favoritos" class="btn-filtro" type="button">❤️ Favoritos (<span id="contador-favoritos">0</span>)</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="status-carregamento" class="status-msg">Carregando personagens do multiverso...</div>
+        <!-- Área onde os cards serão inseridos dinamicamente pelo JavaScript -->
+        <section id="cards-container" class="cards-grid" aria-live="polite"></section>
+
+        <div class="paginacao">
+            <button id="btn-anterior" type="button" disabled>← Página Anterior</button>
+            <span id="info-pagina">Página 1</span>
+            <button id="btn-proxima" type="button">Próxima Página →</button>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>Projeto Front-End • Dados consumidos em tempo real da <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener noreferrer">Rick and Morty API</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
